@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myapp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Details</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <link rel="stylesheet" href="/one.css">
+</head>
+<body ng-controller="myCtrl">
+    <center>
+        <h1>FETCHING DATA FROM MYSQL</h1>
+    <table border="1">
+        <tr>
+            <th>NAME</th>
+            <th>Code language</th>
+            <th>standard input</th>
+            <th>source code</th>
+            <th>Timestamp</th>
+        </tr>
+        <tr ng-repeat="item in items" class="info">
+            <td>{{item.user}}</td>
+            <td>{{item.lang}}</td>
+            <td>{{item.stdin}}</td>
+            <td>{{item.src}}</td>
+            <td>{{item.times}}</td>
+        </tr>
+    </table>
+    <script>
+        angular.module('myapp', []).controller('myCtrl', function($scope, $http, $location) {
+            $http.get('/api/data').then(function(response) {
+                $scope.items = response.data;
+            })
+        });
+
+    </script>
+    </center>
+</body>
+</html>

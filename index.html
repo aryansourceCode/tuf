@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enter Data</title>
+    <link rel="stylesheet" href="/one.css">
+</head>
+<body>
+    <center>
+        <h1>ENTER THE DETAILS</h1>
+        <form action="http://localhost:7000/detail" method="post">
+            <label>Username : </label><input type="text" placeholder="enter username" name="user" id="user">
+            <br>
+            <label>enter lang : </label><select name="lang" id="lang">
+                <option value="c++">c++</option>
+                <option value="p">python</option>
+                <option value="j">java</option>
+                <option value="js">javascript</option>
+            </select>  
+            <br>
+            <label>standard input : </label><input type="text" placeholder="stdin" name="stdin" id="stdin"><br>
+            <label>source code : </label><input type="textarea" placeholder="enter source code" name="src" id="src"><br>
+            <button>Submit</button>
+        </form>
+    </center>
+</body>
+</html>
